@@ -1,0 +1,40 @@
+.nav-container {
+    flex-basis: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    background-color: black;
+
+}
+
+.nav-icon{
+    width: 10rem;
+}
+
+nav a,
+nav a:visited {
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    flex-basis: 550px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.active-link {
+color: green;
+}
+
+.default-link{
+color: white;
+
+}
