@@ -1,0 +1,9 @@
+.post-container {
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    background-color: #e9eaec;
+    justify-content: flex-start;
+    width: 50%;
+color: black;
+}

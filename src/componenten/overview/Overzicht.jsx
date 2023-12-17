@@ -1,23 +1,28 @@
 import React from "react";
-import posts from "./../constants/data.json"
-import {Link} from "react-router-dom";
+import posts from "./../../constants/data.json"
+import {Link, useParams} from "react-router-dom";
 
-function Overzicht({posts}) {
+
+
+function Overzicht() {
+
     return(
         <>
             <h1>Blogposts</h1>
             <h3>Aantal: {Object.keys(posts).length}</h3>
-            <h2>{console.log(posts[0].created)}</h2>
+            <h2>{console.log(posts)}</h2>
 
-            {posts.map( ({author, comments, id, readTime, title}) => {
+            {posts.map( (post) => {
                 return (
-                    <article key={id} className= 'post-container'>
+                    <article key={post.id} className= 'post-container'>
                         <span className={'title-and-author'}>
-                            <h3><Link to={`/blog/${id}`}>{title}</Link></h3>
-                            <i>{author}</i>
+                            <h3><Link to={`/blog/${post.id}`}>{post.title} </Link></h3>
+                            <i>{post.author}</i>
                         </span>
-                        <i>{comments} reacties - {readTime} keer gelezen.</i>
+                        <i>{post.comments} reacties - {post.readTime} keer gelezen.</i>
+
                     </article>
+
                 )
             }) }
         </>

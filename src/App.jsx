@@ -17,9 +17,9 @@ function App() {
              <Routes>
                  <Route path= '/' element={<HomePage/>} />
                  <Route path= '/nieuwepost:id' element={<NieuwePost/>}/>
-                 <Route path= '/overzicht' element={<Overzicht/>}/>
+                 <Route path= '/overview' element={<Overzicht/>}/>
                  <Route path= '/errorPage' element={<ErrorPage/>}/>
-                 <Route path= '/blogpostdetail/:id' element={<BlogPostDetail/>}/>
+                 <Route path= '/blog/:blogId' element={<BlogPostDetail/>}/>
              </Routes>
 
                  <img src={logo} alt="Company logo"/>
