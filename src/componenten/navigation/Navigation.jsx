@@ -1,30 +1,36 @@
-
+import logoMedium from "./../../assets/logo-medium.png"
 import './Navigation.css';
 // eslint-disable-next-line no-unused-vars
 import React from "react";
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
 
 function Navigation (){
+    const navigate = useNavigate();
+
     return(
-        <nav>
-        <div className="nav-container">
-<img className='nav-icon' src='src/assets/logo-medium.png' alt=''/>
-            <ul>
+        <nav className="main-navigation outer-content-container">
+        <div className="inner-nav-container">
+            <button type= 'button' className='main-navigation-logo-button' onClick={() => navigate('/')}>
+            <img className="nav-logo" src={logoMedium} alt='Logo that links to home page'/>
+            </button>
+
+            <ul className="main-navigation-links">
                 <li>
-                    <NavLink to= '/' className={({isActive}) => isActive === true? 'active-link' : 'default-link'}>
+                    <NavLink className={({isActive}) => isActive? "active-link" : "default-link"} to="/">
                         Home
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to= '/newpost' className={({isActive}) => isActive === true? 'active-link' : 'default-link'}>
-                        Nieuwe posten
+                    <NavLink  className={({isActive}) => isActive ? 'active-link' : 'default-link'} to= '/posts'>
+                        Alle posts
                     </NavLink>
                 </li>
                 <li>
-                    <NavLink to= '/overview' className={({isActive}) => isActive === true? 'active-link' : 'default-link'}>
-                        Overzicht
+                    <NavLink  className={({isActive}) => isActive ? 'active-link' : 'default-link'} to= '/new'>
+                        Nieuwe post maken
                     </NavLink>
                 </li>
+
             </ul>
         </div>
         </nav>

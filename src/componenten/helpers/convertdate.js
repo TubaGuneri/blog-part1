@@ -1,11 +1,10 @@
 
-export const formatDate = (created) => {
-    const longOptions = {
+function formatDateString(dateString){
+    const date=  new Date(dateString);
+    return date.toLocaleDateString('nl-NL',{
         year: 'numeric',
         month: 'long',
         day: 'numeric',
-    };
-
-    const formattedDate = new Date(created).toLocaleString('nl-NL', longOptions)
-    return formattedDate;
-};
+    });
+}
+export default formatDateString;
